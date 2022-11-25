@@ -1,8 +1,6 @@
 import axios from "axios";
 import { baseURL } from "../utils/constant";
 
-console.log(process.env.REACT_APP_TOKEN) 
-
 const instance = axios.create({
     baseURL,
     headers: {

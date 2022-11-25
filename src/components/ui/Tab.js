@@ -12,8 +12,6 @@ export default function Tabs({ tabsInfo, clickHandler, activeTab }) {
     icon: "text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-300",
   };
 
-  console.log(activeTab);
-
   return (
     <>
       <div class="border-b border-gray-200 dark:border-gray-700">

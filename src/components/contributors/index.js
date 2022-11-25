@@ -9,10 +9,10 @@ import RepoList from "../ui/List";
 
 export default function Index(props) {
   const [query, setQuery] = useState("");
-  const [currentQuery, setCurrentQuery] = useState()
+  const [currentQuery, setCurrentQuery] = useState();
   const [repos, setRepos] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [closeResults, setCloseResults] = useState(true)
+  const [closeResults, setCloseResults] = useState(true);
 
   const getRepos = async () => {
     try {
@@ -23,14 +23,13 @@ export default function Index(props) {
 
       if (data) {
         setRepos(data.data.items);
-        setQuery("")
-        setCloseResults(false)
+        setQuery("");
+        setCloseResults(false);
       }
     } catch (error) {
       console.log("An error occured", error);
     }
   };
-
 
   return (
     <>
@@ -42,9 +41,9 @@ export default function Index(props) {
             e.preventDefault();
             getRepos();
           }}
-          changeHandler={(text) =>  {
-            setQuery(text)
-            setCurrentQuery(text)
+          changeHandler={(text) => {
+            setQuery(text);
+            setCurrentQuery(text);
           }}
         ></SearchBar>
 
@@ -72,12 +71,15 @@ export default function Index(props) {
           </div>
         )}
 
-        {(!closeResults) && <RepoList header={`Search results for ${currentQuery}`} repos={repos} onClose={() => {
-            console.log("here");
-            setCloseResults(true)
-        }} />}
-
-        
+        {!closeResults && (
+          <RepoList
+            header={`Search results for ${currentQuery}`}
+            repos={repos}
+            onClose={() => {
+              setCloseResults(true);
+            }}
+          />
+        )}
       </div>
     </>
   );
