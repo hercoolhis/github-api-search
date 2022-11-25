@@ -8,7 +8,6 @@ export default function Home(props) {
   const [activeTab, setActiveTab] = useState(0);
 
   const setActiveTabId = (tabId) => {
-    console.log("clicked");
     setActiveTab(tabId);
   };
   return (
@@ -19,15 +18,11 @@ export default function Home(props) {
             <Tabs
               tabsInfo={[
                 {
-                  icon: "./svg/user-search.svg",
-                  title: "Search repo contributors",
-                  isActive: true,
-                },
-                {
                   icon: "./svg/keyword-search.svg",
                   title: "Search repo by keyword",
-                  isActive: false,
+                  isActive: true,
                 },
+                
               ]}
               clickHandler={setActiveTabId}
               activeTab={activeTab}
