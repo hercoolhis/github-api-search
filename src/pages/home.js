@@ -12,8 +12,8 @@ export default function Home(props) {
   };
   return (
     <>
-      <div class="bg-blue-100 mt-8 px-6 py-4 my-3 w-3/4 mx-auto shadow rounded-md flex items-center">
-        <div class=" w-3/4 ">
+      <div className="bg-blue-100 mt-8 px-6 py-4 my-3 w-3/4 mx-auto shadow rounded-md flex items-center">
+        <div className=" w-3/4 ">
           <Tabs
             tabsInfo={[
               {

@@ -1,6 +1,6 @@
  <svg
                         aria-hidden="true"
-                        class="mr-2 w-5 h-5 text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-300"
+                        className="mr-2 w-5 h-5 text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-300"
                         fill="#3B82F6"
                         viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg"

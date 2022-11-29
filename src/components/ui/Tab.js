@@ -14,16 +14,16 @@ export default function Tabs({ tabsInfo, clickHandler, activeTab }) {
 
   return (
     <>
-      <div class="border-b border-gray-200 dark:border-gray-700">
-        <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+      <div className="border-b border-gray-200 dark:border-gray-700">
+        <ul className="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
           {tabsInfo.map((eachTab, index) => (
-            <li class="mr-2">
+            <li key={index} className="mr-2">
               <a
                 href="#"
                 onClick={() => {
                   clickHandler(index);
                 }}
-                class={`inline-flex p-4 rounded-t-lg ${
+                className={`inline-flex p-4 rounded-t-lg ${
                   activeTab === index ? activeState.tab : inactiveState.tab
                 } `}
               >
