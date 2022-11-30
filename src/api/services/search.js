@@ -1,7 +1,7 @@
 import axiosClient from "../client";
 
 const searchList = {
-    repo: (query) => axiosClient.get(`/search/repositories?q=${query}`)
+    repo: (query, page = 1) => axiosClient.get(`/search/repositories?q=${query}&page=${page}`)
 }
 
 export default searchList;

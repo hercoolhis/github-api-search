@@ -6,6 +6,7 @@ import { useState } from "react";
 import SearchBar from "../ui/SearchBar";
 import { Search } from "../../api/services/index";
 import RepoList from "../ui/List";
+import Pagination from "../ui/Pagination";
 
 export default function Index(props) {
   const [query, setQuery] = useState("");
@@ -14,17 +15,18 @@ export default function Index(props) {
   const [isLoading, setIsLoading] = useState(false);
   const [closeResults, setCloseResults] = useState(true);
 
-  const getRepos = async () => {
+  const [paginateInfo, setPaginationInfo] = useState();
+
+  const getRepos = async (query, page) => {
     try {
       setIsLoading(true);
-      const data = await Search.repo(query);
-
-      //console.log(data.headers.link);
+      const data = await Search.repo(query, page);
 
       setIsLoading(false);
 
       if (data) {
         setRepos(data.data.items);
+        setPaginationInfo(data.headers.link);
         setQuery("");
         setCloseResults(false);
       }
@@ -41,7 +43,7 @@ export default function Index(props) {
           text={query}
           submitHandler={(e) => {
             e.preventDefault();
-            getRepos();
+            getRepos(query);
           }}
           changeHandler={(text) => {
             setQuery(text);
@@ -74,13 +76,16 @@ export default function Index(props) {
         )}
 
         {!closeResults && (
-          <RepoList
-            header={`Search results for ${currentQuery}`}
-            repos={repos}
-            onClose={() => {
-              setCloseResults(true);
-            }}
-          />
+          <>
+            <RepoList
+              header={`Search results for ${currentQuery}`}
+              repos={repos}
+              onClose={() => {
+                setCloseResults(true);
+              }}
+            />
+            <Pagination paginateInfo={paginateInfo} getRepos={getRepos} query={currentQuery} />
+          </>
         )}
       </div>
     </>

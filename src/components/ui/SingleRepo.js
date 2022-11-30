@@ -11,7 +11,7 @@ export default function SingleRepo({ repo }) {
       <li className="py-3 sm:py-4">
         <div
           onClick={() => openInNewTab(repo.html_url)}
-          className="flex items-center space-x-4 cursor-pointer"
+          className="flex items-center space-x-4 hover:bg-gray-600 rounded-2xl p-2 cursor-pointer"
         >
           <div className="flex-shrink-0">
             <img
