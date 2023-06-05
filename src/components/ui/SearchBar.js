@@ -1,6 +1,11 @@
 import React from "react";
 
-export default function SearchBar({ placeholder, text, submitHandler, changeHandler  }) {
+export default function SearchBar({
+  placeholder,
+  text,
+  submitHandler,
+  changeHandler,
+}) {
   return (
     <>
       <form onSubmit={submitHandler}>
@@ -8,7 +13,7 @@ export default function SearchBar({ placeholder, text, submitHandler, changeHand
           htmlFor="default-search"
           className="mb-2 mt-4 text-sm font-medium text-gray-900 sr-only dark:text-white"
         >
-          Search
+          Search Repos
         </label>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -33,7 +38,9 @@ export default function SearchBar({ placeholder, text, submitHandler, changeHand
             id="default-search"
             className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder={placeholder}
-            onChange={(e) => { changeHandler(e.target.value) } }
+            onChange={(e) => {
+              changeHandler(e.target.value);
+            }}
             value={text}
             required
           />
