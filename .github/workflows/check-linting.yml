@@ -21,13 +21,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: npm login
-        run:
-          npm config set //registry.npmjs.org/:_authToken=$NPM_READONLY_AUTH_TOKEN
+        run: npm config set //registry.npmjs.org/:_authToken=$NPM_READONLY_AUTH_TOKEN
         env:
           NPM_READONLY_AUTH_TOKEN: ${{ secrets.NPM_READONLY_AUTH_TOKEN }}
 
       - name: npm install
-        working-directory: ./application
+        working-directory: ./
         run: npm i --ignore-scripts
 
       - name: Run ESLint
