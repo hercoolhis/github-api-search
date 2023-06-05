@@ -35,3 +35,4 @@ jobs:
           eslint-config-path: "./.eslintrc.json"
           custom-directory: "/"
           repo-token: ${{secrets.GITHUB_TOKEN}}
+          eslintignorePath: "./.eslintignore"
