@@ -26,7 +26,7 @@ const FrontIcon = () => {
 
 const BackIcon = () => {
 
-  
+
   return (
     <svg
 
@@ -50,6 +50,8 @@ export default function Pagination({ paginateInfo, getRepos, query }) {
 
   useEffect(() => {
     if (paginateInfo) {
+
+      
       setPaginatePoints(resolvePaginationData(paginateInfo));
     }
   }, [paginateInfo]);
