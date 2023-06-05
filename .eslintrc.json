@@ -22,9 +22,7 @@
       "standard-react",
       "eslint:recommended",
       "plugin:react-hooks/recommended",
-      "plugin:meteor/recommended",
-      "plugin:react/recommended",
-      "@meteorjs/eslint-config-meteor"
+      "plugin:react/recommended"
     ],
     "parser": "@babel/eslint-parser",
     "parserOptions": {
@@ -43,8 +41,7 @@
     "plugins": [
       "react",
       "emotion",
-      "react-hooks",
-      "meteor"
+      "react-hooks"
     ],
     "rules": {
       "curly": "error",
