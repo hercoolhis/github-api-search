@@ -1,5 +1,3 @@
-// eslint-disable-next-line import/no-unresolved
-/* eslint-disable import/no-unresolved */
 import React from "react";
 
 export default function PaginationButton({point,
@@ -16,8 +14,6 @@ export default function PaginationButton({point,
   return (
     <>
 
-
-    
       <button
         type="button"
         disabled={!point}

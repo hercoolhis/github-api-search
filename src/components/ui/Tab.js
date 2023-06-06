@@ -1,7 +1,6 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 
-export default function Tabs({ tabsInfo, clickHandler, activeTab }) {
+export default function Tabs({tabsInfo, clickHandler, activeTab}) {
   const activeState = {
     tab: "text-blue-600 rounded-t-lg border-b-2 border-blue-600 active dark:text-blue-500 dark:border-blue-500 group",
     icon: "text-blue-600 dark:text-blue-500",
@@ -27,8 +26,6 @@ export default function Tabs({ tabsInfo, clickHandler, activeTab }) {
                   activeTab === index ? activeState.tab : inactiveState.tab
                 } `}
               >
-
-                
                 <img
                   style={{
                     filter: activeTab !== index ? "grayscale(100%)" : "",
@@ -38,7 +35,6 @@ export default function Tabs({ tabsInfo, clickHandler, activeTab }) {
                   alt="icon"
                 />
 
-                
                 {eachTab.title}
               </a>
             </li>
