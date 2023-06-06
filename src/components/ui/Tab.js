@@ -13,33 +13,34 @@ export default function Tabs({tabsInfo, clickHandler, activeTab}) {
 
   return (
     <>
-      <div className="border-b border-gray-200 dark:border-gray-700">
-        <ul className="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
-          {tabsInfo.map((eachTab, index) => (
-            <li key={index} className="mr-2">
-              <a
-                href="#"
-                onClick={() => {
-                  clickHandler(index);
-                }}
-                className={`inline-flex p-4 rounded-t-lg ${
-                  activeTab === index ? activeState.tab : inactiveState.tab
-                } `}
-              >
-                <img
-                  style={{
-                    filter: activeTab !== index ? "grayscale(100%)" : "",
-                  }}
-                  className={`mr-2 w-5 h-5`}
-                  src={eachTab?.icon}
-                  alt="icon"
-                />
+      <div className="border-b border-gray-200 dark:border-gray-700"><ul className="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
 
-                {eachTab.title}
-              </a>
-            </li>
-          ))}
-        </ul>
+        {tabsInfo.map((eachTab, index) => (
+          <li key={index} className="mr-2">
+            <a
+              href="#"
+              onClick={() => {
+                clickHandler(index);
+              }}
+              className={`inline-flex p-4 rounded-t-lg ${
+                activeTab === index ? activeState.tab : inactiveState.tab
+              } `}
+            >
+
+              <img
+                style={{
+                  filter: activeTab !== index ? "grayscale(100%)" : "",
+                }}
+                className={`mr-2 w-5 h-5`}
+                src={eachTab?.icon}
+                alt="icon"
+              />
+
+              {eachTab.title}
+            </a>
+          </li>
+        ))}
+      </ul>
       </div>
     </>
   );
