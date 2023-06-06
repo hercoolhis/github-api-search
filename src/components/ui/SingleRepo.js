@@ -9,11 +9,16 @@ export default function SingleRepo({ repo }) {
   return (
     <>
       <li className="py-3 sm:py-4">
+
         <div
           onClick={() => openInNewTab(repo.html_url)}
+
+
           className="flex items-center space-x-4 hover:bg-gray-600 rounded-2xl p-2 cursor-pointer"
         >
           <div className="flex-shrink-0">
+
+
             <img
               className="w-8 h-8 rounded-full"
               src={repo.owner.avatar_url}
@@ -37,10 +42,15 @@ export default function SingleRepo({ repo }) {
               className="text-sm text-gray-500 truncate dark:text-gray-400"
             >
               {repo.html_url}
+
             </a>
+
+
+            
           </div>
           <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-            {repo.private ? "Private" : "Public"}
+            {repo.private ? 
+            "Private" : "Public"}
           </div>
         </div>
       </li>

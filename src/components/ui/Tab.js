@@ -27,6 +27,8 @@ export default function Tabs({ tabsInfo, clickHandler, activeTab }) {
                   activeTab === index ? activeState.tab : inactiveState.tab
                 } `}
               >
+
+                
                 <img
                   style={{
                     filter: activeTab !== index ? "grayscale(100%)" : "",

@@ -8,7 +8,10 @@ export default function RepoList({ header, repos, onClose }) {
   return (
     <>
       <div className="w-full mt-10  p-4 bg-white border rounded-lg shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+
+
         <div className="flex items-center justify-between mb-4">
+          
           <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">
             {header}
           </h5>
