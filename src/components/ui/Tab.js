@@ -37,6 +37,8 @@ export default function Tabs({ tabsInfo, clickHandler, activeTab }) {
                   src={eachTab?.icon}
                   alt="icon"
                 />
+
+                
                 {eachTab.title}
               </a>
             </li>
