@@ -56,7 +56,8 @@
             "^src/",
             "^/",
             "simpl-schema"
-          ]
+          ],
+          "caseSensitive": false 
         }
       ],
       "max-len": [

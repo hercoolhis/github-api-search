@@ -22,6 +22,7 @@ jobs:
           config_path: "./.eslintrc.js"
           ignore_path: "./.eslintignore"
           extra_args: "--max-warnings=0"
+          skip_annotations: "true"
           file_extensions: |
             **/*.js
             **/*.jsx

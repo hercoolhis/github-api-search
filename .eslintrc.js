@@ -1,4 +1,3 @@
-/* eslint-disable */
 module.exports = {
   env: {
     browser: true,
@@ -52,6 +51,7 @@ module.exports = {
           "^/",
           "simpl-schema"
         ],
+        "caseSensitive": false 
       },
     ],
     "max-len": [

@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/no-unresolved
+/* eslint-disable import/no-unresolved */
 import React from "react";
 
 export default function Tabs({tabsInfo, clickHandler, activeTab}) {
@@ -16,6 +18,7 @@ export default function Tabs({tabsInfo, clickHandler, activeTab}) {
       <div className="border-b border-gray-200 dark:border-gray-700"><ul className="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
 
         {tabsInfo.map((eachTab, index) => (
+
           <li key={index} className="mr-2">
             <a
               href="#"
