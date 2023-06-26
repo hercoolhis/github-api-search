@@ -3,6 +3,8 @@ import React from "react";
 
 export default function SingleRepo({ repo }) {
   const openInNewTab = (url) => {
+
+    
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
@@ -32,12 +34,18 @@ export default function SingleRepo({ repo }) {
             <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
               {repo.full_name}
             </p>
+
+
             <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+
+
               {repo.description}
             </p>
             <a
               href={repo.html_url}
               target={"_blank"}
+
+
               rel="noreferrer"
               className="text-sm text-gray-500 truncate dark:text-gray-400"
             >
@@ -49,6 +57,8 @@ export default function SingleRepo({ repo }) {
             
           </div>
           <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+
+
             {repo.private ? 
             "Private" : "Public"}
           </div>
