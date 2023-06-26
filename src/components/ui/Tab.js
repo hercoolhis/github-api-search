@@ -1,7 +1,8 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+// eslint-disable-next-line import/no-unresolved
+/* eslint-disable import/no-unresolved */
 import React from "react";
 
-export default function Tabs({ tabsInfo, clickHandler, activeTab }) {
+export default function Tabs({tabsInfo, clickHandler, activeTab}) {
   const activeState = {
     tab: "text-blue-600 rounded-t-lg border-b-2 border-blue-600 active dark:text-blue-500 dark:border-blue-500 group",
     icon: "text-blue-600 dark:text-blue-500",
@@ -14,34 +15,35 @@ export default function Tabs({ tabsInfo, clickHandler, activeTab }) {
 
   return (
     <>
-      <div className="border-b border-gray-200 dark:border-gray-700">
-        <ul className="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
-          {tabsInfo.map((eachTab, index) => (
-            <li key={index} className="mr-2">
-              <a
-                href="#"
-                onClick={() => {
-                  clickHandler(index);
-                }}
-                className={`inline-flex p-4 rounded-t-lg ${
-                  activeTab === index ? activeState.tab : inactiveState.tab
-                } `}
-              >
+      <div className="border-b border-gray-200 dark:border-gray-700"><ul className="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
 
-                
-                <img
-                  style={{
-                    filter: activeTab !== index ? "grayscale(100%)" : "",
-                  }}
-                  className={`mr-2 w-5 h-5`}
-                  src={eachTab?.icon}
-                  alt="icon"
-                />
-                {eachTab.title}
-              </a>
-            </li>
-          ))}
-        </ul>
+        {tabsInfo.map((eachTab, index) => (
+
+          <li key={index} className="mr-2">
+            <a
+              href="#"
+              onClick={() => {
+                clickHandler(index);
+              }}
+              className={`inline-flex p-4 rounded-t-lg ${
+                activeTab === index ? activeState.tab : inactiveState.tab
+              } `}
+            >
+
+              <img
+                style={{
+                  filter: activeTab !== index ? "grayscale(100%)" : "",
+                }}
+                className={`mr-2 w-5 h-5`}
+                src={eachTab?.icon}
+                alt="icon"
+              />
+
+              {eachTab.title}
+            </a>
+          </li>
+        ))}
+      </ul>
       </div>
     </>
   );
