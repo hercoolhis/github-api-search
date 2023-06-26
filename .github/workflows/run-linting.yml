@@ -1,0 +1,27 @@
+name: Run linting on changed files in PR
+
+on: [pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm i  # OR: yarn 
+
+      - name: Run eslint on changed files
+        uses: tj-actions/eslint-changed-files@v19
+        with:
+          config_path: "./.eslintrc.json"
+          ignore_path: "./.eslintignore"
+          extra_args: "--max-warnings=0"
+          file_extensions: |
+            **/*.js
+            **/*.jsx
